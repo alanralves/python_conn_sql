@@ -27,7 +27,7 @@ def read_query(connection, query): # Executa a query no banco
     except Error as err:
         print(f"Erro: '{err}'")
     
-query_clientes = "SELECT * FROM clientes LIMIT 10;" # Cria a variavel com a query
+query_clientes = "SELECT * FROM clientes;" # Cria a variavel com a query
 
 connect_db = create_db_connection("localhost", "root", "12345678", "nome_do_banco") # Cria a variavel de conexão
 results = read_query(connect_db,query_clientes) # Cria a variavel com o resultado da pesquisa
