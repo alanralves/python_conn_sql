@@ -2,14 +2,14 @@ import mysql.connector
 from mysql.connector import Error
 import pandas as pd
 
-def create_db_connection(host_name, user_name, user_password, db_name): # Conecta ao banco de dados
+def create_connection(servidor, usuario, senha, nome_do_banco): # Conecta ao banco de dados
     connection = None
     try:
         connection = mysql.connector.connect(
-            host = host_name,
-            user = user_name,
-            passwd = user_password,
-            database = db_name
+            host = servidor,
+            user = usuario,
+            passwd = senha,
+            database = nome_do_banco
         )
         print("Conexão bem sucedida.")
     except Error as err:
@@ -27,9 +27,9 @@ def read_query(connection, query): # Executa a query no banco
     except Error as err:
         print(f"Erro: '{err}'")
     
-query_clientes = "SELECT * FROM clientes LIMIT 10;" # Cria a variavel com a query
+query_clientes = "SELECT * FROM clientes;" # Cria a variavel com a query
 
-connect_db = create_db_connection("localhost", "root", "12345678", "insight_places") # Cria a variavel de conexão
+connect_db = create_connection("servidor", "usuario", "senha", "nome_do_banco") # Cria a variavel de conexão
 results = read_query(connect_db,query_clientes) # Cria a variavel com o resultado da pesquisa
 
 list_db = [] # Cria uma lista vazia, que será preenchida com os dados das tuplas trazidas do banco, será uma lista de listas
