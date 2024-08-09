@@ -1,4 +1,4 @@
-# Projeto de Conexão Python-MySQL
+# Conexão Python-MySQL
 
 Este é um projeto simples que demonstra uma forma de conexão entre o Python e o MySQL, possibilitando a busca de informações em um banco de dados SQL.
 
