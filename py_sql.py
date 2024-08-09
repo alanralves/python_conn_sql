@@ -29,7 +29,7 @@ def read_query(connection, query): # Executa a query no banco
     
 query_clientes = "SELECT * FROM clientes LIMIT 10;" # Cria a variavel com a query
 
-connect_db = create_db_connection("localhost", "root", "12345678", "insight_places") # Cria a variavel de conexão
+connect_db = create_db_connection("localhost", "root", "12345678", "nome_do_banco") # Cria a variavel de conexão
 results = read_query(connect_db,query_clientes) # Cria a variavel com o resultado da pesquisa
 
 list_db = [] # Cria uma lista vazia, que será preenchida com os dados das tuplas trazidas do banco, será uma lista de listas
